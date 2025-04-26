@@ -20,6 +20,20 @@ SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
 ```
 
+### Static IP
+
+Use `nmtui` (Text User Interface for controlling `NetworkManager`) to set the IP, gateway, and DNS servers.
+
+```console
+sudo nmtui
+```
+
+Then restart `NetworkManager`.
+
+```console
+sudo systemctl restart NetworkManager
+```
+
 ## Stuff to install
 
 Necessities.
