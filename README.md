@@ -6,6 +6,8 @@
   - [Stuff to install](#stuff-to-install)
   - [Camera](#camera)
   - [Docker](#docker)
+    - [RStudio Server](#rstudio-server)
+  - [Ollama](#ollama)
 
 # Raspberry Pi notes
 
@@ -144,4 +146,38 @@ docker run --rm \
    -e USERID=$(id -u) \
    -e GROUPID=$(id -g) \
    rocker/rstudio:4.5
+```
+
+## Ollama
+
+Install.
+
+```console
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+Run.
+
+```console
+ollama run llama3.2 Write a Bash script that can find big files in my home directory
+```
+```bash
+Here is a simple bash script that finds all large files in the home directory and its subdirectories. It will print out the full path of each file along with its size.
+
+# Set the threshold size for what we consider a 'large' file
+SIZE_THRESHOLD=10M
+
+# Get all files in the home directory and its subdirectories
+find ~ -type f -exec du -b {} \; | sort -rn | while read -r file_size filename; do
+  if (( $file_size > $SIZE_THRESHOLD )); then
+    echo "File: $filename, Size: $file_size"
+  fi
+done
+```
+
+To use this script:
+
+1. Save it to a file (for example `find_large_files.sh`), make sure the file is executable by running the command `chmod +x find_large_files.sh`.
+
+2. Move into your home directory and run the script using `./find_large_files.sh`.
 ```
