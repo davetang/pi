@@ -180,4 +180,3 @@ To use this script:
 1. Save it to a file (for example `find_large_files.sh`), make sure the file is executable by running the command `chmod +x find_large_files.sh`.
 
 2. Move into your home directory and run the script using `./find_large_files.sh`.
-```
