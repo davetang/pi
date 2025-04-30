@@ -1,3 +1,12 @@
+## Table of Contents
+
+- [Raspberry Pi notes](#raspberry-pi-notes)
+  - [Setup](#setup)
+    - [Static IP](#static-ip)
+  - [Stuff to install](#stuff-to-install)
+  - [Camera](#camera)
+  - [Docker](#docker)
+
 # Raspberry Pi notes
 
 I have a Raspberry Pi 3 and 4 (and I might buy a 5 at some point) and I tend to forget how I did things, so I'm keeping my notes here.
@@ -72,4 +81,48 @@ Capture a test photo.
 
 ```console
 libcamera-jpeg -o test.jpg
+```
+
+## Docker
+
+Install.
+
+```console
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+# log out and back in
+```
+
+Test.
+
+```console
+docker run hello-world
+```
+```
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+c9c5fd25a1bd: Pull complete
+Digest: sha256:c41088499908a59aae84b0a49c70e86f4731e588a737f1637e73c8c09d995654
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
 ```
