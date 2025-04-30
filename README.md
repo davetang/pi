@@ -126,3 +126,22 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+### RStudio Server
+
+Pull.
+
+```console
+docker pull rocker/rstudio:4.5
+```
+
+Run.
+
+```console
+docker run --rm \
+   -p 8888:8787 \
+   -e PASSWORD=password \
+   -e USERID=$(id -u) \
+   -e GROUPID=$(id -g) \
+   rocker/rstudio:4.5
+```
