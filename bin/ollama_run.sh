@@ -13,7 +13,9 @@ fi
 
 QUERY="{
    \"model\": \"${MODEL}\",
-   \"prompt\": \"${@}\"
+   \"prompt\": \"${@}\",
+   \"stream\": false
 }"
 
+echo curl http://${IP}:${PORT}/api/generate -d "${QUERY}"
 curl http://${IP}:${PORT}/api/generate -d "${QUERY}"
