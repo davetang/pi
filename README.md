@@ -12,7 +12,7 @@
 
 # Raspberry Pi notes
 
-I have a Raspberry Pi 3 and 4 (and I might buy a 5 at some point) and I tend to forget how I did things, so I'm keeping my notes here.
+I have a Raspberry Pi 3, 4, and 5; I tend to forget how I did things, so I'm keeping my notes here. (Or I could set things up using [Ansible](https://github.com/davetang/learning_ansible)!)
 
 ## Setup
 
