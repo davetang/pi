@@ -90,3 +90,18 @@ Visit http://ip_addr:3030/graphql to access GraphiQL.
 The documentation explorer is particularly valuable since it automatically generates docs from your schema. Click "Docs" in the top right and you can browse all available types, queries, and mutations without reading separate documentation.
 
 The auto-completion (triggered with Ctrl+Space) shows you what fields are available as you type, making it easy to discover your API.
+
+Minimal query; you will need to log in first.
+
+```
+query Minimal {
+  currentUser {
+    id
+    name
+  }
+
+  tags {
+    key
+  }
+}
+```
