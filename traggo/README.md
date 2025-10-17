@@ -71,3 +71,22 @@ type Post {
 * Queries read data (like GET).
 * Mutations modify data (like POST/PUT/DELETE).
 * Subscriptions are real-time updates via WebSocket.
+
+## GraphiQL
+
+GraphiQL (pronounced "graphical") is an in-browser IDE for exploring and testing GraphQL APIs. It's one of the most useful tools when working with GraphQL.
+
+GraphiQL provides:
+
+* Interactive query editor with syntax highlighting.
+* Auto-completion as you type queries.
+* Documentation explorer to browse your entire schema.
+* Query history to see previous queries.
+* Real-time results for running queries and to see responses immediately.
+* Prettify/format queries automatically.
+
+Visit http://ip_addr:3030/graphql to access GraphiQL.
+
+The documentation explorer is particularly valuable since it automatically generates docs from your schema. Click "Docs" in the top right and you can browse all available types, queries, and mutations without reading separate documentation.
+
+The auto-completion (triggered with Ctrl+Space) shows you what fields are available as you type, making it easy to discover your API.
