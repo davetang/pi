@@ -19,3 +19,55 @@ docker compose up -d
 ```
 
 Visit http://ip_addr:3030 and log in using admin/password.
+
+## GraphQL
+
+GraphQL is a query language for APIs and a runtime for executing those queries. It was developed by Facebook in 2012 and open-sourced in 2015.
+
+With traditional REST APIs, you often face:
+
+* Over-fetching: Getting more data than you need.
+* Under-fetching: Making multiple requests to get all the data you need.
+* Rigid endpoints: Backend changes require new endpoints.
+
+GraphQL lets clients request exactly what they need in a single request.
+
+Instead of multiple endpoints (`/users`, `/posts`, `/comments`), you have one endpoint where clients send queries describing the data they want.
+
+```graphql
+{
+  user(id: "123") {
+    name
+    email
+    posts {
+      title
+      comments {
+        text
+        author
+      }
+    }
+  }
+}
+```
+
+The schema defines your data types and relationships:
+
+```graphql
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+  author: User!
+}
+```
+
+* Queries read data (like GET).
+* Mutations modify data (like POST/PUT/DELETE).
+* Subscriptions are real-time updates via WebSocket.
